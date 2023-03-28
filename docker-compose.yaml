@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  demo1:
+    container_name: env_demo_1
+    image: demo-env
+    build:
+      context: .
+    environment:
+      - NEXT_PUBLIC_API_URL=dev-env.test.com
+    ports:
+      - "3000:3000"
+  demo2:
+    container_name: env_demo_2
+    image: demo-env
+    build:
+      context: .
+    environment:
+      - NEXT_PUBLIC_API_URL=dev2-env.test.com
+    ports:
+      - "3001:3000"
